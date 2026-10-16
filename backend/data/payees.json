@@ -1,0 +1,35 @@
+[
+  {
+    "id": "university_1",
+    "name": "Example University Finance Office",
+    "type": "university",
+    "bank": "Sandbox Bank",
+    "account": "0000000000001001",
+    "verified": true,
+    "source": "fake demo data",
+    "date_checked": "2026-10-15",
+    "confidence": "low"
+  },
+  {
+    "id": "landlord_1",
+    "name": "Example Landlord Li",
+    "type": "landlord",
+    "bank": "Sandbox Bank",
+    "account": "0000000000002002",
+    "verified": true,
+    "source": "fake demo data",
+    "date_checked": "2026-10-15",
+    "confidence": "low"
+  },
+  {
+    "id": "dorm_1",
+    "name": "Example International Dorm Office",
+    "type": "dorm",
+    "bank": "Sandbox Bank",
+    "account": "0000000000003003",
+    "verified": false,
+    "source": "fake demo data",
+    "date_checked": "2026-10-15",
+    "confidence": "low"
+  }
+]

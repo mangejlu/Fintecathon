@@ -7,11 +7,12 @@ The full spec is in `PLAN.md`. Read only the sections relevant to the current ta
 ## Stack
 - Backend: Python 3.11, FastAPI, Pydantic, SQLite, pytest (`backend/`)
 - Frontend: Next.js + Tailwind (`frontend/`)
-- The assistant uses the Anthropic Python SDK with tool calling. Read the API key from the `ANTHROPIC_API_KEY` environment variable.
+- The assistant uses Zhipu GLM (Z.ai) through its OpenAI-compatible API with tool calling, via the `openai` Python package. Settings come from environment variables: `LLM_API_KEY`, `LLM_BASE_URL`, `LLM_MODEL`, `LLM_VISION_MODEL`. See decision 24 in `docs/decisions.md`.
 
 ## Layout
 - `backend/main.py` API routes
 - `backend/agent.py` the assistant loop and system prompt
+- `backend/llm.py` the only file that talks to the AI provider
 - `backend/tools.py` plain Python tools (calculator, receiving, checks, plans)
 - `backend/guardrails.py` heads-up rules and permission levels
 - `backend/db.py` SQLite and the audit log

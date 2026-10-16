@@ -11,7 +11,7 @@ Needs Python 3.11 and Node 20+.
 ```bash
 python3.11 -m venv .venv
 .venv/bin/pip install -r backend/requirements.txt
-cp .env.example .env   # then add your ANTHROPIC_API_KEY
+cp .env.example .env   # then add your LLM_API_KEY (from z.ai)
 cd frontend && npm install
 ```
 

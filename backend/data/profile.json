@@ -1,0 +1,18 @@
+{
+  "id": "student_1",
+  "name": "Sample Student",
+  "home_country": "MX",
+  "home_currency": "MXN",
+  "account_type": "both",
+  "confirm_above_cny": 2000,
+  "confirm_new_payee": true,
+  "new_payee_pause_seconds": 0,
+  "move_on_mode": "open_ended",
+  "permit_expiry": null,
+  "program_end": null,
+  "leave_date": null,
+  "seed_charges_today": [],
+  "source": "fake demo student",
+  "date_checked": "2026-10-15",
+  "confidence": "low"
+}

@@ -4,7 +4,7 @@ Decided October 15, 2026. These settle open points in `PLAN.md`. Where a decisio
 
 ## Data and the calculator
 
-1. **No invented numbers in data files.** Fake numbers live only in test fixtures under `backend/tests/`. Files in `backend/data/` stay empty or "unknown" until the real sheets arrive. (Replaces PLAN Step 1's "placeholder numbers marked low confidence".)
+1. **Placeholder numbers until the real sheets arrive.** Changed October 15, 2026, to follow PLAN Step 1. `backend/data/rules.json` holds placeholder numbers with source `"placeholder"`, confidence `low` and an empty `date_checked`. Placeholders are never presented as real rules: the empty date makes every one stale, so the app always adds "verify with your bank". They are replaced row by row as the rules sheet arrives. Real values that can't be found stay empty, meaning unknown.
 2. **Unknown values.** A route with an unknown fee, minimum or limit stays available and shows "cost unknown" for that line. It ranks after every fully known route and gets a "verify with your bank" note. An unknown limit never makes a route unavailable.
 3. **Exchange rates.**
    - Every rate is CNY per 1 unit of foreign currency (for example 1 USD = 7.10 CNY).
@@ -65,3 +65,13 @@ Decided October 15, 2026. These settle open points in `PLAN.md`. Where a decisio
     - `content/` (task guides, move-on items, cashier phrases)
     - `app_settings.json` (the defaults from decision 11)
 23. **Hosting.** On startup the database is rebuilt and seeded from the data files. The log resetting on each redeploy goes on the known-risk list. Execution evidence is exported from local runs, and replays back up the live demo.
+
+## AI provider
+
+24. **AI provider.** Decided October 15, 2026. Replaces the Claude / Anthropic SDK in `PLAN.md`.
+    - **Provider:** Zhipu's free Flash models through Z.ai's OpenAI-compatible API: GLM-4.5-Flash for chat and tools, GLM-4.6V-Flash for reading images.
+    - **Why:** it is free, it is a Chinese provider reachable from China (judges, the Shenzhen final), and it supports tool calling.
+    - **How:** `backend/llm.py` is the only file that talks to the provider, using the `openai` package. Provider, URL and models come from `.env`.
+    - **Backup:** Alibaba Model Studio's free quota (Singapore region). Switching to it changes only `.env`, no code.
+    - **Honesty:** free models are smaller and less reliable at following rules. The scenario pass rate is reported as measured, and the known-risk list says so. Free-tier terms can change, so check them on docs.z.ai.
+    - **Still to verify:** the free status of both models, the base URL, and that z.ai is reachable from mainland China. If it is not, switch `LLM_BASE_URL` to `https://open.bigmodel.cn/api/paas/v4`.

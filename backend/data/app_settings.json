@@ -1,0 +1,9 @@
+{
+  "large_amount_share_of_limit": 0.8,
+  "runway_warning_share": 0.8,
+  "rule_freshness_days": 90,
+  "many_large_transfers_count": 3,
+  "many_large_transfers_window_days": 7,
+  "source": "app default, docs/decisions.md #11 (not a bank rule)",
+  "date_checked": "2026-10-15"
+}
