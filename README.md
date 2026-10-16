@@ -2,7 +2,7 @@
 
 A web app with an AI assistant that makes money in China make sense for international students. FinTechathon 2026, Topic C. Sandbox only: no real money.
 
-See `PLAN.md` for the spec and `docs/decisions.md` for decisions that refine it.
+See `PLAN.md` for the spec and `docs/decisions.md` for decisions that refine it. New teammates: start with `docs/team-setup.md`.
 
 ## Setup
 
