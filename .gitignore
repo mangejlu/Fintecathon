@@ -1,0 +1,20 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# SQLite
+*.db
+
+# Frontend (frontend/.gitignore covers the rest)
+node_modules/
+.next/
+.vercel/
+
+.DS_Store
